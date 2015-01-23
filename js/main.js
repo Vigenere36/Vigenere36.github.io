@@ -1,12 +1,11 @@
 var initializeMenu = function() {
-	var filename = location.pathname.split("/")
-	console.log(location.pathname)
-	console.log(location.pathname.split("/"))
-	filename = filename[filename.length - 1]
+	var pathname = location.pathname.split("/")
+	filename = pathname[pathname.length - 1]
 
 	var files = ["index.html", "projects.html", "resume.html", "blog.html", "contact.html"]
 	var ids = ["#homeButton", "#projectsButton", "#resumeButton", "#blogButton", "#contactButton"]
-	var index = (filename.indexOf("/") == -1) ? 0 : files.indexOf(filename)
+	var index = (files.indexOf(filename) == -1) ? 0 : files.indexOf(filename)
+	console.log(index)
 	var selectedID = ""
 
 	if (index != -1) {
@@ -15,7 +14,6 @@ var initializeMenu = function() {
 
 	if (selectedID) {
 		$(selectedID).toggleClass("buttonSelected")
-		console.log(selectedID + " > .arrow")
 		$(selectedID + " > .arrow").css({visibility: "visible"})
 	}
 
