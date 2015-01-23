@@ -1,5 +1,7 @@
 var initializeMenu = function() {
 	var filename = location.pathname.split("/")
+	console.log(location.pathname)
+	console.log(location.pathname.split("/"))
 	filename = filename[filename.length - 1]
 
 	var files = ["index.html", "projects.html", "resume.html", "blog.html", "contact.html"]
