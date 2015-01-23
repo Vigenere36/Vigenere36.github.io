@@ -4,7 +4,7 @@ var initializeMenu = function() {
 
 	var files = ["index.html", "projects.html", "resume.html", "blog.html", "contact.html"]
 	var ids = ["#homeButton", "#projectsButton", "#resumeButton", "#blogButton", "#contactButton"]
-	var index = (filename == "") ? 0 : files.indexOf(filename)
+	var index = (filename.indexOf("/") == -1) ? 0 : files.indexOf(filename)
 	var selectedID = ""
 
 	if (index != -1) {
