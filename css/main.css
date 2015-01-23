@@ -168,30 +168,32 @@ textarea {
     background: rgba(221, 221, 221, 1);
 }
 
-.navbar .selectedArrow {
-    position: relative;
+.navbar .arrow {
+    position:relative;
     float: right;
+    visibility: hidden;
 }
 
 @keyframes arrowHoverAni {
-    0% {right: 20%; opacity: 0.2;}
+    0% {right: 15%; opacity: 0.2;}
     100% {right: 0px; opacity: 1;}
 }
 @-webkit-keyframes arrowHoverAni {
-    0% {right: 20%; opacity: 0.2;}
+    0% {right: 15%; opacity: 0.2;}
     100% {right: 0px; opacity: 1;}
 }
 @-moz-keyframes arrowHoverAni {
-    0% {right: 20%; opacity: 0.2;}
+    0% {right: 15%; opacity: 0.2;}
     100% {right: 0px; opacity: 1;}
 }
 
-.arrowHover {
+.navbar .arrowHover {
     position: relative;
     float: right;
-    animation: arrowHoverAni 1s;
-    -webkit-animation: arrowHoverAni 1s;
-    -moz-animation: arrowHoverAni 1s;
+    animation: arrowHoverAni .5s;
+    -webkit-animation: arrowHoverAni .5s;
+    -moz-animation: arrowHoverAni .5s;
+    visibility: visible;
 }
 
 .content {
