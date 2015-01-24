@@ -30,8 +30,16 @@ var initializeMenu = function() {
 				$("#" + $(this).attr("id") + " > .arrow").toggleClass("arrowHover")
 			}
 		}
+	)
 
-	);
+	//Toggle class off to prevent firefox bug
+	$(".navbar button").click(
+		function() {
+			if (selectedID.indexOf($(this).attr("id")) == -1) {
+				$(this).toggleClass("hovering", false)
+				$("#" + $(this).attr("id") + " > .arrow").toggleClass("arrowHover", false)
+			}
+	})
 }
 
 initializeMenu()
