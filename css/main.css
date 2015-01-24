@@ -142,6 +142,10 @@ textarea {
     background: rgba(0, 0, 0, 0);
 }
 
+.navbar button:focus {
+    outline: none;
+}
+
 .navbar .buttonSelected {
     border: 0;
     margin: 0 1px 0 1px;
@@ -162,9 +166,9 @@ textarea {
 }
 
 .navbar .hovering {
-    animation: hoverAni 1s;
-    -webkit-animation: hoverAni 1s;
-    -moz-animation: hoverAni 1s;
+    animation: hoverAni .25s;
+    -webkit-animation: hoverAni .25s;
+    -moz-animation: hoverAni .25s;
     background: rgba(221, 221, 221, 1);
 }
 
@@ -190,9 +194,9 @@ textarea {
 .navbar .arrowHover {
     position: relative;
     float: right;
-    animation: arrowHoverAni .5s;
-    -webkit-animation: arrowHoverAni .5s;
-    -moz-animation: arrowHoverAni .5s;
+    animation: arrowHoverAni .25s;
+    -webkit-animation: arrowHoverAni .25s;
+    -moz-animation: arrowHoverAni .25s;
     visibility: visible;
 }
 
