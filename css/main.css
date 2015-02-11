@@ -204,6 +204,42 @@ html, body {
     font-family: 'Open Sans';
 }
 
+.content section .project {
+    position: relative;
+    width: 80%;
+    height: 350px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px #888888;
+    border: 1px solid;
+    text-align: center;
+    background-color: rgba(200, 200, 200, .5);
+}
+
+.content section .project h2 {
+    color: #000;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.content section .project p {
+    text-align: justify;
+    font-size: 16px;
+    font-family: 'Open Sans';
+}
+
+.content section .project a {
+    font-size: 22px;
+    font-family: 'Open Sans';
+}
+
+.content section #polymul {
+    height: 100%;
+    text-align: center;
+    padding: 15px;
+}
+
 .content section #PE {
     margin-top: 6px;
     margin-left: 25px;
