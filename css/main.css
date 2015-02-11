@@ -134,7 +134,7 @@ html, body {
 
 .navbar li {
     display: inline;
-    padding: 0 25px;
+    padding: 0 30px;
 }
 
 .navbar a {
@@ -144,7 +144,7 @@ html, body {
     color: #000;
     text-decoration: none;
     font-family: 'Advent Pro';
-    font-size: 22px;
+    font-size: 20px;
     background: rgba(0, 0, 0, 0);
 }
 
@@ -186,6 +186,7 @@ html, body {
 .content {
     position: relative;
     height: 100%;
+    margin-top: -20px;
 }
 
 .content section {
@@ -204,8 +205,8 @@ html, body {
 }
 
 .content section #PE {
-    margin-top: 12px;
-    margin-left: 20px;
+    margin-top: 6px;
+    margin-left: 25px;
 }
 
 .content section #resume {
