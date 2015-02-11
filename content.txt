@@ -1,0 +1,69 @@
+Home
+	> Nice, centered banner "Welcome" or "Hello"
+	> Section "About Me"
+	> Section interests
+	> Section links
+	> Find photos, one profile picture, one project picture? 
+
+	_______________________________________________
+   |        |                                      |
+   |  Kia   |           -- Welcome! --             |
+   |  Ora!  |                                      |
+   |        |   About me                           |
+   |        |       ..................  ______     |
+   |        |   ...................... |      |    |
+   |        |   ...................... |      |    |
+   |        |   ...................... |      |    |
+   |        |                          |______|    |
+   |        |   Interests                          |
+   |        |       ..................             |
+   |        |   ......................             |
+   |        |   ......................             |
+   |        |                                      |
+   |        |   Links                              |
+   |        |                                      |
+   |        |   -...........                       |
+   |        |   -...........                       |
+   |        |                                      |
+   |________|______________________________________|
+
+Projects
+
+	> Divide into personal and class (? maybe I shouldn't)
+	> Have boxes of description & screenshot
+	> Have a link to separate page and bitbucket repo
+
+	_______________________________________________
+   |        |                                      |
+   |  Kia   |           -- Projects --             |
+   |  Ora!  |                                      |
+   |        |   Personal                           |
+   |        |      _______________________         |
+   |        |     |  FFT   |              |        |
+   |        |     |  ..... |              |        |
+   |        |     | ...... |              |        |
+   |        |     |________|______________|        |
+   |        |                                      |
+   |        |   Class                              |
+   |        |                                      |
+   |        |                                      |
+   |        |                                      |
+   |        |                                      |
+   |        |                                      |
+   |        |                                      |
+   |        |                                      |
+   |        |                                      |
+   |________|______________________________________|
+
+Resume
+
+	> Look for a way to embed pdf in web page (pdf viewer plugin?)
+	> Also put a general runthrough of languages and interests
+
+Blog
+	> Coming soon!
+	> Maybe write about the np-complete & physical reality paper?
+
+
+Contact
+	> Email, Phone number, Linkedin (?)

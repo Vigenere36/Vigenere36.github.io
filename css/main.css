@@ -100,6 +100,7 @@ textarea {
 html, body {
     position: relative;
     height: 100%;
+    background: #ddd;
 }
 
 .menu {
@@ -144,8 +145,8 @@ html, body {
     width: 100%;
     border: 0;
     margin: 0 1px 0 1px;
-    font-family: 'Indie Flower';
-    font-size: 25px;
+    font-family: 'Rock Salt'; /*vs. Indie Flower*/
+    font-size: 15px;
     background: rgba(0, 0, 0, 0);
 }
 
@@ -215,32 +216,49 @@ Since the selected button shouldn't change when hovered over
     position: relative;
     left: 16.66%;
     height: 100%;
-    background: #ddd;
 }
 
 .content > h1 {
     position: relative;
     margin-bottom: -10px;
     text-align: center;
-    font-size: 70px;
+    font-size: 60px;
     font-family: 'Advent Pro';
 }
 
-.content .sec {
+.content section {
     position: relative;
-    left: 80px;
+    width: 75%;
+    left: 140px;
     margin: 0 160px 0 0;
     text-align: left;
-    font-size: 30px;
+    font-size: 26px;
     font-family: 'Dosis';
 }
 
-.content .sec > p {
+.content section > p {
     position: relative;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Droid Sans';
 }
 
+.content section ul {
+    position: relative;
+    list-style: none;
+    font-size: 18px;
+    font-family: 'Droid Sans';
+}
+
+.content section #PE {
+    margin-top: 12px;
+    margin-left: 20px;
+}
+
+.content section #resume {
+    width: 830px;
+    height: 1070px;
+    text-align:center;
+}
 
 /* ==========================================================================
    Helper classes
