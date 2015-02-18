@@ -1,10 +1,12 @@
 var initializeMenu = function() {
 	var pathname = location.pathname.split("/")
+	console.log(pathname)
 	filename = pathname[pathname.length - 1]
 
 	var files = ["index.html", "projects.html", "resume.html", "blog.html", "contact.html"]
 	var ids = ["#homeLink", "#projectsLink", "#resumeLink", "#blogLink", "#contactLink"]
 	var index = (files.indexOf(filename) == -1) ? 0 : files.indexOf(filename)
+	index = (pathname.indexOf("projects") != -1) ? 1 : index
 	var selectedID = ""
 
 	if (index != -1) {
