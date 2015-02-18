@@ -221,6 +221,25 @@ html, body {
     border: 1px solid;
 }
 
+.content section ul {
+    list-style-type: square;
+    font-size: 18px;
+    font-family: 'Open Sans';
+}
+
+/* pre CSS below generated using hilite.me */
+.content section pre {
+    width: 50%;
+    margin: 0;
+    padding:.2em .6em;
+    border:solid gray;
+    border-width:.1em .1em .1em .8em;
+    overflow:auto;
+    background: #f8f8f8;
+    line-height: 125%;
+    font-size: 15px;
+}
+
 /*================  PROJECT TAGS  =====================*/
 
 .content section .project {
@@ -282,13 +301,6 @@ html, body {
     font-size: 16px;
 }
 
-/*=================  MISC  ===================*/
-
-.content section #classList {
-    list-style-type: square;
-    font-size: 18px;
-    font-family: 'Open Sans';
-}
 
 /* ==========================================================================
    Helper classes

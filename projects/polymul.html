@@ -41,7 +41,44 @@
             <div class="content">
                 <section id="projects">
                     <h2>PolyMul</h2>
-                    <p>Coming soon!</p>
+                    <p>After I first finished implementing this, it felt magical that the manipulation of imaginary numbers gave the correct results.</p>
+                    <p>One caveat of my program is the floating point error it generates. I have tried to minimize it as much as possible, but it grows in 
+                        proportion to the number of terms multiplied.</p>
+                    <h3>Results</h3>
+                    <p>Lets start with something small:</p>
+<pre>
+x + 1
+x + 2
+</pre>
+                    <p>Result:</p>
+<pre>
+2 + 3x + x^2
+</pre>
+                    <p><br>So, floating point doesn't occur so far. Lets try something a little larger:</p>
+<pre>
+x^4 - x^2 + x + 1
+-x^3 + 2x^2 + x + 2
+-2x^2 + 4x - 1
+</pre>
+                    <p>Result:</p>
+<pre>
+-2 + 5x + 7x^2 - 2x^3 - 1x^4 - 6x^5 + 8x^6 + 5x^7 - 8x^8 + 2x^9
+</pre>
+                    <p><br>A quick check on WolframAlpha verifies this answer. Still no floating point error. Lets try something big this time:</p>
+<pre>
+x^7 - 5x^2 + x^4 - x^2 + x + 1
+x^8 - 3x^6 + 5x^4 -x^3 + 2x^2 + x + 2
+x^10 - 5x^5 + 4x^4 - 5x^3 - 2x^2 + 4x - 1
+x^5 - 3x^2 + 2x + 5
+x^8 - 3x^5 + 2x^2 - 4
+</pre>
+                    <p>Result:</p>
+<pre>
+40 - 83.9997x - 424x^2 + 906x^3 + 842x^4 - 1354x^5 - 1907x^6 + 1657x^7 + 3696x^8 - 7761x^9 - 876.999x^10 + 8269x^11 - 3817x^12 - 746x^13 - 362.999x^14 - 714x^15 + 1369x^16 + 248x^17 - 148x^18 - 273.999x^19 + 1071x^20 - 504x^21 - 131x^22 - 406x^23 + 155x^24 - 22x^25 + 306x^26 - 43x^27 - 79x^28 - 56.9986x^29 + 32x^30 - 14x^31 + 6x^32 + 8x^33 + 7x^34 - 5x^35 - 3x^36 + 1x^38
+</pre>
+                    <p><br>Again, a (longer) check on WolframAlpha verifies this result. As you may notice there is tiny floating point error that is accumulating, but is quite small right now.</p>
+
+                    <p><a href="https://bitbucket.org/Vigenere36/polymul">Source code</a></p>
                 </section>
             </div>
         </div>
