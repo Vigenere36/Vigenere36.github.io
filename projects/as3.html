@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<title>
+			CS184 AS3
+		</title>
+	</head>
+	<body style="background-color:#000000">
+
+		<div class = "title text-center" style = "color:gray; font-size: 20px">Assignment 3: Bezier Subdivision</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">Will timestamp when extra credit was done after due date</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">Note: Object files don't work perfectly, only look good with high step size.</br>
+																			The program converts the object file passed in to 'temp.bez' and reads that.</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">Note 2: Object files work on my machine but not my partner's for some reason.<br>
+																			If running it on an object file doesn't work, try running on the 'temp.bez' that it outputs.</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">Keys: arrows, shift+arrows, +, -, 'w', 's' as expected</br>
+																			'a' switches between uniform and adaptive subdivision</br>
+																			'r' resets the object's orientation to its inital orientation'</br>
+																			'h' enables hidden line mode</div>
+
+		<div class="container">
+			<div class="row">
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/test_uniform_.05.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Simple wireframe with uniform subdivison</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 test.bez 0.05</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/test_hidden_.05.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Simple wireframe with hidden line mode enabled (press 'h')</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 test.bez 0.05</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/test_adaptive_.001.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Simple wireframe with adaptive subdivision</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 test.bez 0.001 -a</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/test_adaptive.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Adaptive subdivision with shading</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 test.bez 0.001 -a</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/teapot_uniform_.05.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Uniform subdivision wireframe</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 teapot.bez 0.05</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/teapot_hidden_.05.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Uniform subdivision wireframe with hidden line mode enabled</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 teapot.bez 0.05</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/teapot_adaptive_flat_.1.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Adaptive subdivision with flat shading (intentional low poly)</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 teapot.bez 0.1 -a</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/teapot_adaptive_.1.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Adaptive subdivision with smooth shading (intentional low poly)</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 teapot.bez 0.1 -a</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/teapot_adaptive_.001.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Adaptive subdivision with smooth shading (high poly)</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 teapot.bez 0.001 -a</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/teacup.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Simple teacup</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 teacup.bez 0.05</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/dragon0.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Skyrim's Alduin. Sorry Paarthurnax</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 alduin.bez 0.5 (Converted from obj to bez beforehand)</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/dragon1.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Flying</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 alduin.bez 0.5</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/dragon2.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">I summon thee, No-eyes Blue Dragon!</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 alduin.bez 0.5</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/dragon_wireframe.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Too many patches to get a good wireframe</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 alduin.bez 0.5</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/armadillo.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">Beat Stanfurd!</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 armadillo.bez 1 (huge file when converted from bez to obj, so didn't include. Also the reason for the non-existant step size)</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/bunny.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">The bunny from raytracer</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 -o bunny.obj 0.5</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/beretta.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">(Duel berettas)/2</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 -o beretta.obj 1  (more subdivision = more ugly)</div>
+				</div>
+				<div class = "col-md-4">
+					<div class="row center-block text-center" style = "color:gray"><img src="assets/as3/p90.png" width=300px height=300px></div>
+					<div class="row center-block text-center" style = "color:gray">P90</div>
+					<div class="row center-block text-center" style = "color:gray">./as3 -o p90.obj 1</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="container">
+			<div class="row" style="font-size:200%"><a href="bezsubdiv.html">Back</a></div>
+		</div>
+	</body>
+</html>

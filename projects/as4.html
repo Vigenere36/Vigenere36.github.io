@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<title>
+			CS184 AS4
+		</title>
+	</head>
+	<body style="background-color:#000000">
+
+		<div class = "title text-center" style = "color:gray; font-size: 20px">Assignment 4: Inverse Kinematics</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">Will timestamp when extra credit was done after due date</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">Usage: ./as4 &ltfilename&gt</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">File format:</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">-arm [joint/]length ... (joint types: pm for prismatic, pn for pin, ba for ball, dp for double pin)</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">-path a b (where a and b are coefficients defining the surface described by equation z = ax^3 + by^3)</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">-cir r (where r is the radius of the cross-section of a vertical cylinder centered at the origin)</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">-ell a b (where a is the radius in the x direction and b is the radius in the y direction)</div>
+		<div class = "row text-center" style = "color:gray; font-size:14px">The resulting path is the intersection of the cubic surface and the volume specified by the cir or ell flags.</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_1.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Showing basic requirements</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .5 .2 .5 .6</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 -0.3</div>
+					<div class="row center-block text-center" style = "color:gray">-ell 1 1.5</div>
+				</div>
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_2.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Another example</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .2 .3 .4 .5</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 0.5</div>
+					<div class="row center-block text-center" style = "color:gray">-cir 1</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_3.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Yet another example</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 0.5</div>
+					<div class="row center-block text-center" style = "color:gray">-cir 1</div>
+				</div>
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_4.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Showing pin joints</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .5 pn/.2 .5 pn/.6</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 -0.3</div>
+					<div class="row center-block text-center" style = "color:gray">-ell 1 1.5</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_5.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Showing prismatic joints</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .5 pm/.2 .3 pm/.1</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 -0.3</div>
+					<div class="row center-block text-center" style = "color:gray">-ell 1 1.5</div>
+				</div>
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_6.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Showing double pin joints</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .5 dp/.2 .3 dp/.1 .6</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 -0.3</div>
+					<div class="row center-block text-center" style = "color:gray">-ell 1 1.5</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_7.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Everything together</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm ba/.3 pm/.1 pn/.2 pn/.3 dp/.3 ba/.3</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.3 -0.3</div>
+					<div class="row center-block text-center" style = "color:gray">-ell 1 1.5</div>
+				</div>
+				<div class="col-md-6">
+					<div class = "videoUiWrapper">
+						<video width="100%" controls>
+							<source src="assets/as4/ani_8.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Another combination</div>
+					<div class="row center-block text-center" style = "color:gray">Input file:</div>
+					<div class="row center-block text-center" style = "color:gray">-arm .3 pn/.1 dp/.2 pn/.3 .5 .2 dp/.3 pn/.3 .3 pm/.1</div>
+					<div class="row center-block text-center" style = "color:gray">-path 0.1 -0.1</div>
+					<div class="row center-block text-center" style = "color:gray">-ell 2 2</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<center>
+					<div class = "videoUiWrapper">
+						<video width="50%" controls>
+							<source src="assets/as4/ani_9.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="row center-block text-center" style = "color:gray">Without path rotating</div>
+					<div class="row center-block text-center" style = "color:gray">For grading purposes (just in case)</div>
+					<div class="row center-block text-center" style = "color:gray">Same as first shown</div>
+				</center>
+			</div>
+
+		</div>
+		<div class="container">
+			<div class="row" style="font-size:200%"><a href="invkinematics.html">Back</a></div>
+		</div>
+	</body>
+</html>
