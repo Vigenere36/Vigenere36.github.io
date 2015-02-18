@@ -33,7 +33,7 @@
                         <li><span id="homeLink"><span class="arrow">>&emsp;</span><a href="index.html">Home</a></span></li>
                         <li><span id="projectsLink"><span class="arrow">>&emsp;</span><a href="projects.html">Projects</a></span></li>
                         <li><span id="resumeLink"><span class="arrow">>&emsp;</span><a href="resume.html">Resume</a></span></li>
-                        <li><span id="blogLink"><span class="arrow">>&emsp;</span><a href="blog.html">Blog</a></span></li>
+                        <!--<li><span id="blogLink"><span class="arrow">>&emsp;</span><a href="blog.html">Blog</a></span></li>-->
                         <li><span id="contactLink"><span class="arrow">>&emsp;</span><a href="contact.html">Contact</a></span></li>
                     </ul>
                 </div>
@@ -41,6 +41,7 @@
             <div class="content">
                 <section id="projects">
                     <h2>Personal Projects</h2>
+
                         <div class="project">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <h2>PolyMul</h2>
@@ -51,8 +52,8 @@
                                 </p>
                                 <a href="projects/polymul.html">Check it out!</a>
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="polymulPic">
-                                <img src="img/fft.jpg" alt="XKCD Comic" width=90%>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 previewPic">
+                                <img src="img/fft.jpg" alt="XKCD Comic" width=90%><br>
                                 <small>Source: <a href="http://xkcd.com/26/">XKCD</a></small>
                             </div>
                         </div>
@@ -66,8 +67,9 @@
                                     it along with image processing algorithms I had learned in previous classes.</p>
                                 <a href="projects/picFilters.html">Check it out!</a>
                             </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="picfiltersPic">
-                                <img src="img/picfilters.png" alt="Applied Sobel Filter" width=80%>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 previewPic">
+                                <img src="img/picfilters.png" alt="Applied Sobel Filter" width=80%><br>
+                                <small>Sobel filter on Cal logo</small>
                             </div>
                         </div>
 
@@ -105,8 +107,50 @@
                                 </div>
                             </div>
                         </div>
+
                     <h2>Class Projects</h2>
-                        <p>Coming soon!</p>
+
+                        <div class="project">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <h2>Raytracer</h2>
+                                <p>Raytracing is a method used to render images by sending out rays from a camera testing for intersection with objects.</p>
+                                <p>Information gathered from these rays give a (not as accurate) representation of how light interacts with materials.</p>
+                                <a href="projects/raytracer.html">Check it out!</a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 previewPic">
+                                <img src="img/raytracing.png" alt="Generated image through raytracing" width=70%><br>
+                                <small>Example generated image</small>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <h2>Bezier Subdivision</h2>
+                                <p>Bezier subdivision is a method in which to represent a surface using many bezier curves which are combined to form bezier surfaces.</p>
+                                <p>Uses OpenGL to make it interactive (can rotate, translate, zoom, and toggle features).</p>
+                                <a href="projects/bezsubdiv.html">Check it out!</a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 previewPic">
+                                <img src="img/bezsubdiv.png" alt="Generated image through raytracing" width=90%><br>
+                                <small>Bezier subdivision on a teapot</small>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <h2>Inverse Kinematics</h2>
+                                <p>Given an arm and instructions on how to move it, it is easy to make it form a path. This is forward kinematics.</p>
+                                <p>Given an arm and a path, it is not so easy to generate the instructions to make the arm follow the path. This is inverse kinematics.</p>
+                                <a href="projects/invkinematics.html">Check it out!</a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 previewPic">
+                                <img src="img/invkinematics.png" alt="Inverse kinematics example" width=85%><br>
+                                <small>An arm following a path</small>
+                            </div>
+                        </div>
+
+                        <h2>More coming soon!</h2>
+
                 </section>
             </div>
         </div>
