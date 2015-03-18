@@ -97,6 +97,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* NOTES
+Base px size: 14px = 1em
+*/
+
 html, body {
     position: relative;
     height: 100%;
@@ -196,7 +200,7 @@ html, body {
 .content section {
     position: relative;
     width: 75%;
-    left: 140px;
+    left: 13%;
     text-align: left;
     font-size: 26px;
     font-family: 'Advent Pro';
